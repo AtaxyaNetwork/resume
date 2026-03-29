@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cécile Morange - Freelance Cloud Builder</title>
+    <link 
+    rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" 
+    crossorigin="anonymous" 
+    referrerpolicy="no-referrer" />
+    
+    <style>
+/* Google Fonts Imports */
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&family=Raleway:wght@400&family=Global+Indifference&display=swap');
+
+html {
+    overflow-x: hidden;
+    scroll-padding-top: 80px;
+    scrollbar-gutter: stable;
+    overflow-y: scroll;
+}
+
+/* Skip link - visible on focus */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: white;
+    color: black;
+    padding: 8px;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+body {
+    background-color: black;
+    margin: 0;
+    padding: 20px;
+    padding-top: 80px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+    position: relative;
+    overflow-x: hidden;
+}
+
+h1, h2 {
+    font-family: 'Special Elite', cursive;
+}
+
+.lang-switcher {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.9rem;
+    margin-left: auto;
+}
+
+.header-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 3rem;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: black;
+    z-index: 100;
+    overflow: hidden;
+}
+
+.lang-link {
+    color: white;
+    text-decoration: none;
+    opacity: 0.9;
+    transition: opacity 0.2s;
+}
+
+.lang-link.active {
+    opacity: 1;
+    font-weight: bold;
+}
+
+.lang-link:hover,
+.lang-link:focus {
+    opacity: 1;
+    outline: 2px solid white;
+    outline-offset: 2px;
+}
+
+.lang-sep {
+    opacity: 0.8;
+    margin: 0 0.5rem;
+}
+
+.company-name {
+    font-family: 'Special Elite', cursive;
+    font-size: 5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    width: 100%;
+    word-wrap: break-word;
+}
+
+.people {
+    font-family: 'Global Indifference', sans-serif;
+    font-size: 1.8rem;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    margin-bottom: 1.2rem;
+    flex-wrap: wrap;
+}
+
+.people .person {
+    white-space: nowrap;
+}
+
+.people .sep {
+    opacity: 0.75;
+    margin: 0 0.4rem;
+}
+
+@media screen and (max-width: 768px) {
+    html {
+        scroll-padding-top: 120px;
+    }
+
+    body {
+        padding: 0;
+        padding-top: 120px;
+        overflow-x: hidden;
+    }
+
+    .company-name {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    .people {
+        font-size: 1.35rem;
+        margin-bottom: 1rem;
+    }
+
+    .header-top {
+        gap: 1rem;
+        padding: 10px;
+    }
+
+    .lang-switcher {
+        position: static;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        padding: 0;
+        padding-top: 120px;
+        overflow-x: hidden;
+    }
+
+    .company-name {
+        font-size: 2.5rem;
+    }
+
+    .people {
+        font-size: 1.15rem;
+        margin-bottom: 0.9rem;
+    }
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:focus {
+    outline: 2px solid white;
+    outline-offset: 2px;
+}
+
+/* Social Links Section */
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.social-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.social-btn:hover {
+    border-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+    text-decoration: none;
+}
+
+.social-btn:focus {
+    outline: 2px solid white;
+    outline-offset: 2px;
+    border-color: rgba(255, 255, 255, 0.8);
+}
+
+.social-btn i {
+    color: white;
+}
+
+@media screen and (max-width: 480px) {
+    .social-links {
+        gap: 1rem;
+        margin-top: 1.5rem;
+    }
+
+    .social-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 1.3rem;
+    }
+}
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <div class="header-top">
+        <div class="lang-switcher">
+            <a href="./index.html" class="lang-link active">EN</a>
+            <span class="lang-sep">|</span>
+            <a href="./index-fr.html" class="lang-link">FR</a>
+        </div>
+    </div>
+
+    <main id="main-content">
+        <h1 class="company-name">Cécile Morange</h1>
+        <p class="people">Freelance Cloud Builder</p>
+
+        <div class="content">
+<p>Location: Luxembourg<br />
+Email: contact[at]cecilemorange.fr<br />
+LinkedIn: https://www.linkedin.com/in/cecilemorange<br />
+Website: https://cecilemorange.fr</p>
+<h2 id="freelance-cloud-builder">Freelance Cloud Builder</h2>
+<blockquote>
+<p><strong>Designing and operating open-source virtualization
+platforms</strong><br />
+with a strong focus on <strong>XCP-ng / Xen Orchestra</strong>,<br />
+resilient datacenter architectures<br />
+and <strong>automation-driven operations</strong>.</p>
+</blockquote>
+<hr />
+<h2 id="profile">Profile</h2>
+<p>IT professional with a strong hands-on background in
+<strong>datacenter operations</strong>,<br />
+<strong>open-source virtualization</strong>, <strong>network
+architecture</strong> and <strong>Linux systems</strong>.</p>
+<p>Over the past years, I have specialized in the design, migration and
+operation of<br />
+<strong>XCP-ng / Xen Orchestra infrastructures</strong>, supporting
+organizations through<br />
+complex <strong>VMware and XenServer exit strategies</strong>, including
+multi-datacenter setups.</p>
+<p>Pragmatic, field-oriented mindset with a strong focus on
+<strong>reliability</strong>,<br />
+<strong>simplicity</strong>, <strong>automation</strong> and
+<strong>operational efficiency</strong>.</p>
+<hr />
+<h2 id="professional-experience">Professional Experience</h2>
+<h3 id="february-2026-present">February 2026 – Present</h3>
+<p><strong>Disruptive Minds</strong> – Co-Founder &amp; Technical
+Lead<br />
+Luxembourg<br />
+Co-founder and technical lead of an IT infrastructure services company
+focused on open-source virtualization.</p>
+<ul>
+<li>Design and delivery of XCP-ng / Xen Orchestra platforms<br />
+</li>
+<li>VMware to XCP-ng migration projects (single and
+multi-datacenter)<br />
+</li>
+<li>Design of resilient, automated and cost-efficient
+infrastructures<br />
+</li>
+<li>Definition and enforcement of technical and operational
+standards<br />
+</li>
+<li>Hands-on involvement in complex migrations and production
+environments</li>
+</ul>
+<h3 id="february-2023-february-2026">February 2023 – February 2026</h3>
+<p><strong>Independent Infrastructure &amp; Virtualization
+Consultant</strong><br />
+Paris</p>
+<p>Independent consulting activity focused on datacenter operations,
+open-source<br />
+virtualization and infrastructure architecture.</p>
+<ul>
+<li>Design, audit and implementation of XCP-ng / Xen Orchestra
+infrastructures<br />
+</li>
+<li>Migration projects from XenServer and VMware to XCP-ng<br />
+</li>
+<li>Deployment and administration of XCP-ng pools, including user
+training<br />
+</li>
+<li>Infrastructure audits (XCP-ng, Proxmox, network) and
+remediation<br />
+</li>
+<li>Linux systems administration (Debian, Docker-based workloads)<br />
+</li>
+<li>Network architecture design across up to three datacenters (BGP,
+OSPF)<br />
+</li>
+<li>Datacenter operations: hardware selection, installation and
+maintenance<br />
+</li>
+<li>Disaster Recovery and Business Continuity design and
+implementation<br />
+</li>
+<li>On-call duties, production support and incident response<br />
+</li>
+<li>Infrastructure automation (Packer, Terraform, Ansible, Bash)<br />
+</li>
+<li>Contributions to open-source projects in the XCP-ng ecosystem<br />
+</li>
+<li>Hardware and software R&amp;D around XCP-ng platforms</li>
+</ul>
+<h3 id="august-2020-january-2023">August 2020 – January 2023</h3>
+<p><strong>Aqua Ray</strong> – Systems, Network &amp; Datacenter
+Specialist<br />
+Paris</p>
+<p>Hands-on infrastructure role combining datacenter operations, network
+design<br />
+and early production implementations of open-source virtualization.</p>
+<ul>
+<li>Network design and implementation (BGP, OSPF, MPLS-LDP)<br />
+</li>
+<li>Deployment and operation of XCP-ng / Xen Orchestra platforms<br />
+</li>
+<li>Linux systems administration (LAMP stacks, HAProxy)<br />
+</li>
+<li>Disaster Recovery and Business Continuity planning (PRA)<br />
+</li>
+<li>Datacenter migration operations<br />
+</li>
+<li>Infrastructure automation and tooling (Ansible, Bash)<br />
+</li>
+<li>User and production support</li>
+</ul>
+<h3 id="august-2018-july-2020">August 2018 – July 2020</h3>
+<p><strong>RTE – Réseau de Transport d’Électricité</strong> – Regional
+IT Operations Support<br />
+Aix-en-Provence</p>
+<p>Support role within a large-scale, mission-critical public
+infrastructure.</p>
+<ul>
+<li>Management of regional IT asset inventory and workstation
+fleet<br />
+</li>
+<li>Level 1 user support and incident coordination<br />
+</li>
+<li>Liaison with external managed service providers<br />
+</li>
+<li>Administration and evolution of SharePoint platforms (2010 &amp;
+2013)<br />
+</li>
+<li>User training, documentation and process support</li>
+</ul>
+<hr />
+<h2 id="education">Education</h2>
+<ul>
+<li><p><strong>Administrateur Système et Réseau</strong><br />
+AFORP – Pôle Formation UIMM Île-de-France (2021 – 2023)</p></li>
+<li><p><strong>BTS SIO – SISR</strong><br />
+Pôle Formation des Industries Technologiques du Vaucluse (2018 –
+2020)</p></li>
+<li><p><strong>Bac STI2D – option SIN</strong><br />
+La Salle Avignon (2015 – 2018)</p></li>
+</ul>
+<hr />
+<h2 id="certifications">Certifications</h2>
+<ul>
+<li>MOOC l’Atelier RGPD<br />
+</li>
+<li>IPv6 Certification<br />
+</li>
+<li>SecNum Académie<br />
+</li>
+<li>Objectif IPv6</li>
+</ul>
+<hr />
+<h2 id="languages">Languages</h2>
+<ul>
+<li>French: Native or bilingual<br />
+</li>
+<li>English: Professional working proficiency<br />
+</li>
+<li>German: Elementary</li>
+</ul>
+<hr />
+<h2 id="connect">Connect</h2>
+<div class="social-links">
+    <a href="https://www.linkedin.com/in/cecilemorange/" class="social-btn" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+    </a>
+    <a href="https://x.com/AtaxyaNetwork" class="social-btn" target="_blank" rel="noopener noreferrer" title="X">
+        <i class="fab fa-twitter"></i>
+    </a>
+    <a href="https://github.com/AtaxyaNetwork" class="social-btn" target="_blank" rel="noopener noreferrer" title="GitHub">
+        <i class="fab fa-github"></i>
+    </a>
+</div>
+    </div>
+    </main>
+</body>
+</html>

@@ -42,8 +42,6 @@ Co-founder and technical lead of an IT infrastructure services company focused o
 - Definition and enforcement of technical and operational standards  
 - Hands-on involvement in complex migrations and production environments  
 
----
-
 ### February 2023 – February 2026  
 **Independent Infrastructure & Virtualization Consultant**  
 Paris  
@@ -64,8 +62,6 @@ virtualization and infrastructure architecture.
 - Contributions to open-source projects in the XCP-ng ecosystem  
 - Hardware and software R&D around XCP-ng platforms  
 
----
-
 ### August 2020 – January 2023  
 **Aqua Ray** – Systems, Network & Datacenter Specialist  
 Paris  
@@ -80,8 +76,6 @@ and early production implementations of open-source virtualization.
 - Datacenter migration operations  
 - Infrastructure automation and tooling (Ansible, Bash)  
 - User and production support  
-
----
 
 ### August 2018 – July 2020  
 **RTE – Réseau de Transport d’Électricité** – Regional IT Operations Support  

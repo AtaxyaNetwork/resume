@@ -1,0 +1,234 @@
+html {
+    overflow-x: hidden;
+    scroll-padding-top: 80px;
+    scrollbar-gutter: stable;
+    overflow-y: scroll;
+}
+
+/* Skip link - visible on focus */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: white;
+    color: black;
+    padding: 8px;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+body {
+    background-color: black;
+    margin: 0;
+    padding: 20px;
+    padding-top: 80px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+    position: relative;
+    overflow-x: hidden;
+}
+
+h1, h2 {
+    font-family: 'Special Elite', cursive;
+}
+
+.lang-switcher {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.9rem;
+    margin-left: auto;
+}
+
+.header-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 3rem;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: black;
+    z-index: 100;
+    overflow: hidden;
+}
+
+.lang-link {
+    color: white;
+    text-decoration: none;
+    opacity: 0.9;
+    transition: opacity 0.2s;
+}
+
+.lang-link.active {
+    opacity: 1;
+    font-weight: bold;
+}
+
+.lang-link:hover,
+.lang-link:focus {
+    opacity: 1;
+    outline: 2px solid white;
+    outline-offset: 2px;
+}
+
+.lang-sep {
+    opacity: 0.8;
+    margin: 0 0.5rem;
+}
+
+.company-name {
+    font-family: 'Special Elite', cursive;
+    font-size: 5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    width: 100%;
+    word-wrap: break-word;
+}
+
+.people {
+    font-family: 'Global Indifference', sans-serif;
+    font-size: 1.8rem;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    margin-bottom: 1.2rem;
+    flex-wrap: wrap;
+}
+
+.people .person {
+    white-space: nowrap;
+}
+
+.people .sep {
+    opacity: 0.75;
+    margin: 0 0.4rem;
+}
+
+@media screen and (max-width: 768px) {
+    html {
+        scroll-padding-top: 120px;
+    }
+
+    body {
+        padding: 0;
+        padding-top: 120px;
+        overflow-x: hidden;
+    }
+
+    .company-name {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    .people {
+        font-size: 1.35rem;
+        margin-bottom: 1rem;
+    }
+
+    .header-top {
+        gap: 1rem;
+        padding: 10px;
+    }
+
+    .lang-switcher {
+        position: static;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        padding: 0;
+        padding-top: 120px;
+        overflow-x: hidden;
+    }
+
+    .company-name {
+        font-size: 2.5rem;
+    }
+
+    .people {
+        font-size: 1.15rem;
+        margin-bottom: 0.9rem;
+    }
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:focus {
+    outline: 2px solid white;
+    outline-offset: 2px;
+}
+
+/* Social Links Section */
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.social-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.social-btn:hover {
+    border-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+    text-decoration: none;
+}
+
+.social-btn:focus {
+    outline: 2px solid white;
+    outline-offset: 2px;
+    border-color: rgba(255, 255, 255, 0.8);
+}
+
+@media screen and (max-width: 480px) {
+    .social-links {
+        gap: 1rem;
+        margin-top: 1.5rem;
+    }
+
+    .social-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 1.3rem;
+    }
+}

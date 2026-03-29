@@ -44,8 +44,6 @@ les infrastructures IT et la virtualisation open source.
 - Définition et application des standards techniques et opérationnels  
 - Implication directe dans des migrations complexes et des environnements de production  
 
----
-
 ### Février 2023 – Février 2026  
 **Consultante indépendante Infrastructures & Virtualisation**  
 Paris  
@@ -66,8 +64,6 @@ open source et architecture d’infrastructures.
 - Contributions à l’écosystème open source XCP-ng / Xen Orchestra  
 - R&D matérielle et logicielle autour des plateformes XCP-ng  
 
----
-
 ### Août 2020 – Janvier 2023  
 **Aqua Ray** – Spécialiste Systèmes, Réseaux & Datacenter  
 Paris  
@@ -82,8 +78,6 @@ et premières mises en production de plateformes de virtualisation open source.
 - Opérations de migration datacenter  
 - Automatisation et outillage opérationnel (Ansible, Bash)  
 - Support utilisateurs et production  
-
----
 
 ### Août 2018 – Juillet 2020  
 **RTE – Réseau de Transport d’Électricité** – Support IT Opérations Régionales  
