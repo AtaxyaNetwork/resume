@@ -1,7 +1,6 @@
 # Cécile Morange
 
 Localisation : Luxembourg  
-Téléphone : +352 691 458 569  
 Email : contact@cecilemorange.fr  
 LinkedIn : https://www.linkedin.com/in/cecilemorange  
 Site web : https://cecilemorange.fr  
@@ -55,12 +54,12 @@ open source et architecture d’infrastructures.
 - Projets de migration depuis XenServer et VMware vers XCP-ng  
 - Déploiement et administration de pools XCP-ng, incluant la formation utilisateurs  
 - Audits d’infrastructures (XCP-ng, Proxmox, réseaux) et mise en œuvre des recommandations  
-- Administration de systèmes Linux (Debian, charges Dockerisées)  
-- Conception d’architectures réseau (BGP, OSPF) sur jusqu’à trois datacenters  
+- Administration de systèmes Linux (Debian, Docker)  
+- Conception d’architectures réseau (BGP, OSPF) multi-datacenter  
 - Exploitation datacenter : choix matériel, installation et maintenance  
 - Conception et mise en œuvre de plans de reprise et de continuité d’activité (PRA / PCA)  
 - Astreintes, support de production et gestion d’incidents  
-- Automatisation des infrastructures (Packer, Terraform, Ansible, Bash)  
+- Automatisation infrastructures (Packer, Terraform, Ansible, Bash)  
 - Contributions à l’écosystème open source XCP-ng / Xen Orchestra  
 - R&D matérielle et logicielle autour des plateformes XCP-ng  
 

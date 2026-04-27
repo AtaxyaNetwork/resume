@@ -103,9 +103,40 @@ generate_page() {
     
     # Clean up extra blank lines
     content=$(echo "$content" | sed '/^[[:space:]]*$/d')
-    
+
     # Obfuscate email
     content=$(echo "$content" | sed 's/contact@cecilemorange\.fr/contact[at]cecilemorange.fr/g')
+
+    # Add social links section
+    local connect_title="Connect"
+    local connect_id="connect"
+    if [[ "$lang" == "fr" ]]; then
+        connect_title="Connectez-vous"
+        connect_id="connectez"
+    fi
+
+    read -r -d '' social_section << 'SOCIAL_EOF' || true
+<hr />
+<h2 id="connect">Connect</h2>
+<div class="social-links">
+    <a href="https://www.linkedin.com/in/cecilemorange/" class="social-btn" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+    </a>
+    <a href="https://x.com/AtaxyaNetwork" class="social-btn" target="_blank" rel="noopener noreferrer" title="X">
+        <i class="fab fa-twitter"></i>
+    </a>
+    <a href="https://github.com/AtaxyaNetwork" class="social-btn" target="_blank" rel="noopener noreferrer" title="GitHub">
+        <i class="fab fa-github"></i>
+    </a>
+</div>
+SOCIAL_EOF
+
+    # Update connect section for French if needed
+    if [[ "$lang" == "fr" ]]; then
+        social_section=$(echo "$social_section" | sed 's/<h2 id="connect">Connect<\/h2>/<h2 id="connectez">Connectez-vous<\/h2>/')
+    fi
+
+    content="$content"$'\n'"$social_section"
     
     # Determine alternate page link
     local alt_page="index-fr.html"
@@ -123,10 +154,15 @@ generate_page() {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>$title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
 $FONTS_CSS
 
 $CSS
+
+.social-btn i {
+    color: white;
+}
     </style>
 </head>
 <body>
